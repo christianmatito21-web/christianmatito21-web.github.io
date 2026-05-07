@@ -16,6 +16,7 @@
     font-family:'Poppins', sans-serif;
 }
 
+
 body{
     overflow:hidden;
     min-height:100vh;
@@ -294,6 +295,7 @@ body::before{
     width:100%;
     padding:40px 25px;
     border-radius:28px;
+    position: relative;
 
     background:rgba(255,255,255,0.08);
 
@@ -359,6 +361,7 @@ button{
     font-size:16px;
     font-weight:600;
     transition:0.3s;
+    
 }
 
 /* YES BUTTON */
@@ -514,6 +517,7 @@ const successBox = document.getElementById("successBox");
 
 const subtitle = document.querySelector(".subtitle");
 
+
 let noClicks = 0;
 
 /* SAD MESSAGES */
@@ -527,21 +531,24 @@ const sadMessages = [
 
 /* MOVE NO BUTTON */
 function moveButton(){
+    noBtn.style.position = "absolute";
+    const card = mainCard;
 
     const btnWidth = noBtn.offsetWidth;
     const btnHeight = noBtn.offsetHeight;
 
-    const maxX = window.innerWidth - btnWidth - 20;
-    const maxY = window.innerHeight - btnHeight - 20;
+    const cardWidth = card.clientWidth;
+    const cardHeight = card.clientHeight;
+
+    const maxX = cardWidth - btnWidth - 10;
+    const maxY = cardHeight - btnHeight - 10;
 
     const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
 
-    noBtn.style.position = "fixed";
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
 }
-
 /* HANDLE NO CLICK */
 function handleNoClick(e){
 
@@ -552,12 +559,12 @@ function handleNoClick(e){
     subtitle.innerHTML =
     sadMessages[Math.min(noClicks - 1, sadMessages.length - 1)];
 
-    if(noClicks >= 5){
+    if(noClicks >= 6){
 
         noBtn.style.display = "none";
 
         subtitle.innerHTML =
-        "wala ka nang choice 😘💜";
+        "wala ka nang choice 😛💜";
 
         document.querySelector(".buttons")
         .style.justifyContent = "center";
