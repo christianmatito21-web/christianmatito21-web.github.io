@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Girlfriend?</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    overflow:hidden;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    padding:20px;
+
+    background:
+    radial-gradient(circle at top, rgba(174,0,255,0.5), transparent 40%),
+    linear-gradient(to bottom, #05010d, #120022, #240046);
+}
+
+/* STARS */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#c77dff 1px, transparent 1px);
+
+    background-size:50px 50px, 80px 80px;
+    opacity:0.25;
+    z-index:0;
+}
+
+/* =========================
+   BIG MOVING FLOWERS
+========================= */
+
+.big-flowers{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+    pointer-events:none;
+}
+
+/* FLOWER STYLE */
+.flower{
+    position:absolute;
+    border-radius:50%;
+    animation:floatFlower 10s ease-in-out infinite;
+    opacity:0.4;
+}
+
+/* FLOWER A */
+.flower-a{
+    top:-80px;
+    left:-80px;
+
+    width:320px;
+    height:320px;
+
+    background:
+    radial-gradient(circle,#f3c4ff 18%, transparent 19%),
+    radial-gradient(circle,#d291ff 18%, transparent 19%),
+    radial-gradient(circle,#f3c4ff 18%, transparent 19%),
+    radial-gradient(circle,#d291ff 18%, transparent 19%),
+    radial-gradient(circle,#fff 10%, transparent 11%);
+
+    background-size:
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    70px 70px;
+
+    background-position:
+    50% 0%,
+    0% 50%,
+    100% 50%,
+    50% 100%,
+    center;
+
+    background-repeat:no-repeat;
+
+    filter:
+    blur(1px)
+    drop-shadow(0 0 35px #d291ff);
+
+    animation-duration:12s;
+}
+
+/* FLOWER B */
+.flower-b{
+    bottom:-120px;
+    right:-70px;
+
+    width:380px;
+    height:380px;
+
+    background:
+    radial-gradient(circle,#ffcdf2 18%, transparent 19%),
+    radial-gradient(circle,#f4a7ff 18%, transparent 19%),
+    radial-gradient(circle,#ffcdf2 18%, transparent 19%),
+    radial-gradient(circle,#f4a7ff 18%, transparent 19%),
+    radial-gradient(circle,#fff 10%, transparent 11%);
+
+    background-size:
+    120px 120px,
+    120px 120px,
+    120px 120px,
+    120px 120px,
+    80px 80px;
+
+    background-position:
+    50% 0%,
+    0% 50%,
+    100% 50%,
+    50% 100%,
+    center;
+
+    background-repeat:no-repeat;
+
+    filter:
+    blur(1px)
+    drop-shadow(0 0 45px #ffb3ff);
+
+    animation-duration:15s;
+    animation-delay:2s;
+}
+
+/* FLOWER C */
+.flower-c{
+    top:45%;
+    left:-100px;
+
+    width:260px;
+    height:260px;
+
+    background:
+    radial-gradient(circle,#e0bbff 18%, transparent 19%),
+    radial-gradient(circle,#c77dff 18%, transparent 19%),
+    radial-gradient(circle,#e0bbff 18%, transparent 19%),
+    radial-gradient(circle,#c77dff 18%, transparent 19%),
+    radial-gradient(circle,#fff 10%, transparent 11%);
+
+    background-size:
+    85px 85px,
+    85px 85px,
+    85px 85px,
+    85px 85px,
+    55px 55px;
+
+    background-position:
+    50% 0%,
+    0% 50%,
+    100% 50%,
+    50% 100%,
+    center;
+
+    background-repeat:no-repeat;
+
+    filter:
+    blur(1px)
+    drop-shadow(0 0 35px #c77dff);
+
+    animation-duration:13s;
+}
+
+/* FLOWER D */
+.flower-d{
+    top:5%;
+    right:15%;
+
+    width:220px;
+    height:220px;
+
+    background:
+    radial-gradient(circle,#ffffff 18%, transparent 19%),
+    radial-gradient(circle,#f7d6ff 18%, transparent 19%),
+    radial-gradient(circle,#ffffff 18%, transparent 19%),
+    radial-gradient(circle,#f7d6ff 18%, transparent 19%),
+    radial-gradient(circle,#fff 10%, transparent 11%);
+
+    background-size:
+    70px 70px,
+    70px 70px,
+    70px 70px,
+    70px 70px,
+    45px 45px;
+
+    background-position:
+    50% 0%,
+    0% 50%,
+    100% 50%,
+    50% 100%,
+    center;
+
+    background-repeat:no-repeat;
+
+    filter:
+    blur(1px)
+    drop-shadow(0 0 30px #ffffff);
+
+    animation-duration:11s;
+    animation-delay:1s;
+}
+
+/* FLOWER FLOAT */
+@keyframes floatFlower{
+
+    0%,100%{
+        transform:
+        translateY(0px)
+        rotate(0deg)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        translateY(-30px)
+        rotate(8deg)
+        scale(1.08);
+    }
+}
+
+/* FLOATING HEARTS */
+.hearts{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-50px;
+    color:#d8b4ff;
+    font-size:20px;
+    animation:floatHearts 10s linear infinite;
+    opacity:0.7;
+}
+
+.hearts span:nth-child(1){ left:10%; animation-delay:0s; }
+.hearts span:nth-child(2){ left:25%; animation-delay:2s; }
+.hearts span:nth-child(3){ left:40%; animation-delay:4s; }
+.hearts span:nth-child(4){ left:60%; animation-delay:1s; }
+.hearts span:nth-child(5){ left:75%; animation-delay:3s; }
+.hearts span:nth-child(6){ left:90%; animation-delay:5s; }
+
+@keyframes floatHearts{
+
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.8);
+        opacity:0;
+    }
+}
+
+/* CONTAINER */
+.container{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:360px;
+    text-align:center;
+}
+
+/* CARD */
+.card{
+    width:100%;
+    padding:40px 25px;
+    border-radius:28px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+    0 0 25px rgba(199,125,255,0.5),
+    0 0 60px rgba(123,44,191,0.4);
+
+    animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        box-shadow:
+        0 0 20px rgba(199,125,255,0.4),
+        0 0 40px rgba(123,44,191,0.3);
+    }
+
+    to{
+        box-shadow:
+        0 0 35px rgba(199,125,255,0.8),
+        0 0 70px rgba(123,44,191,0.6);
+    }
+}
+
+/* QUESTION */
+.question{
+    font-family:'Great Vibes', cursive;
+    font-size:52px;
+    color:#f3d9ff;
+    text-shadow:0 0 18px #c77dff;
+    margin-bottom:20px;
+}
+
+/* SUBTITLE */
+.subtitle{
+    color:#ddd;
+    font-size:14px;
+    margin-bottom:25px;
+    min-height:24px;
+    transition:0.3s;
+}
+
+/* BUTTONS */
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+/* YES BUTTON */
+#yesBtn{
+    background:linear-gradient(45deg,#c77dff,#9d4edd);
+    color:white;
+    box-shadow:0 0 20px rgba(199,125,255,0.8);
+    animation:bounce 1.5s infinite;
+}
+
+#yesBtn:hover{
+    transform:scale(1.08);
+}
+
+/* NO BUTTON */
+#noBtn{
+    background:white;
+    color:#6a00a8;
+    position:relative;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+}
+
+/* SUCCESS */
+.success{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    animation:pop 0.6s ease;
+}
+
+@keyframes pop{
+
+    from{
+        transform:scale(0.7);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* IMAGE */
+.success img{
+    width:100%;
+    max-width:300px;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(199,125,255,0.8);
+}
+
+/* MESSAGE */
+.message{
+    color:white;
+    font-size:20px;
+    text-shadow:0 0 12px #c77dff;
+    font-weight:500;
+    line-height:1.6;
+}
+
+/* MOBILE */
+@media(max-width:480px){
+
+    .question{
+        font-size:42px;
+    }
+
+    button{
+        width:120px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<!-- BIG FLOWERS -->
+<div class="big-flowers">
+
+    <div class="flower flower-a"></div>
+    <div class="flower flower-b"></div>
+    <div class="flower flower-c"></div>
+    <div class="flower flower-d"></div>
+
+</div>
+
+<!-- FLOATING HEARTS -->
+<div class="hearts">
+    <span>💜</span>
+    <span>💖</span>
+    <span>✨</span>
+    <span>💕</span>
+    <span>💜</span>
+    <span>💖</span>
+</div>
+
+<div class="container">
+
+    <!-- MAIN CARD -->
+    <div class="card" id="mainCard">
+
+        <div class="question">
+            Will you be my Girlfriend?
+        </div>
+
+        <div class="subtitle">
+            i promise to annoy you forever 💜
+        </div>
+
+        <div class="buttons">
+            <button id="yesBtn">Yes 💜</button>
+            <button id="noBtn">No 😭</button>
+        </div>
+
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success" id="successBox">
+
+        <img
+        src="https://media1.tenor.com/m/y6LthaDam3gAAAAd/sped-up-kiss-cute-cat-kitten-gif-6454201794369349769-cat.gif"
+        alt="Cute Cat Couple">
+
+        <div class="message">
+            yayyysss 💜<br>
+            hindii na us nbsb/ngbs <br>
+            see you soon my loveee😘
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+
+const mainCard = document.getElementById("mainCard");
+const successBox = document.getElementById("successBox");
+
+const subtitle = document.querySelector(".subtitle");
+
+let noClicks = 0;
+
+/* SAD MESSAGES */
+const sadMessages = [
+    "aww sakit naman 😭",
+    "pleaseee reconsider 💔",
+    "i'm getting sad na 🥺",
+    "kahit isang chance lang 😔",
+    "grabe ka naman love 😭💜"
+];
+
+/* MOVE NO BUTTON */
+function moveButton(){
+
+    const btnWidth = noBtn.offsetWidth;
+    const btnHeight = noBtn.offsetHeight;
+
+    const maxX = window.innerWidth - btnWidth - 20;
+    const maxY = window.innerHeight - btnHeight - 20;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+}
+
+/* HANDLE NO CLICK */
+function handleNoClick(e){
+
+    e.preventDefault();
+
+    noClicks++;
+
+    subtitle.innerHTML =
+    sadMessages[Math.min(noClicks - 1, sadMessages.length - 1)];
+
+    if(noClicks >= 5){
+
+        noBtn.style.display = "none";
+
+        subtitle.innerHTML =
+        "wala ka nang choice 😘💜";
+
+        document.querySelector(".buttons")
+        .style.justifyContent = "center";
+
+        return;
+    }
+
+    moveButton();
+}
+
+/* EVENTS */
+noBtn.addEventListener("click", handleNoClick);
+noBtn.addEventListener("touchstart", handleNoClick);
+
+/* YES BUTTON */
+yesBtn.addEventListener("click", ()=>{
+
+    mainCard.style.display = "none";
+    successBox.style.display = "flex";
+
+});
+
+</script>
+
+</body>
+</html>
